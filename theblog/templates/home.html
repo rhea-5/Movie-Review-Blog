@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="masthead">
+  <div class="head-box">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class=" col-md-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h3 class=" site-heading my-4 mt-3 text-black"> <font color="white"> Critic's Corner📽️ </font></h3>
+          <p class="text-dark"><font color="white">At Critic's Corner, we've created the perfect space for all you movie enthusiasts and critics out there. We believe that every movie deserves a voice, and that's why we're here to offer you a platform to share your thoughts, opinions, and insights on the films you've watched.
+
+            Our blog is a community-driven hub for film buffs of all kinds. Whether you're a casual moviegoer, a hardcore cinephile, or somewhere in between, you're invited to be a part of our vibrant community. </font></p>
+            <center><a href="{% url 'create_post' %}" class="btn btn-primary">Create Post</a></center>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+<div class="container">
+  <div class="row">
+    <!-- Blog Entries Column -->
+    <div class="col-md-8 mt-3 left">
+      {% for post in post_list %}
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">{{ post.title }}</h2>
+          <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+          <p class="card-text">{{post.content}}</p>
+          {% if user.is_authenticated and user == post.author %}
+          <a href="{% url 'update_post' post.id %}" class="btn btn-primary">Edit</a>
+          {% endif %}
+          {% if user.is_authenticated and user == post.author %}
+          <a href="{% url 'delete_post' post.id %}" class="btn btn-danger">Delete</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% block sidebar %} 
+    {% include 'sidebar.html' %} 
+    {% endblock sidebar %}
+  </div>
+</div>
+{%endblock%}

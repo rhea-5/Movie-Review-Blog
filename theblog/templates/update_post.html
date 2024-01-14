@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <title>Critic's Corner Movie Reviews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap cdn -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/journal/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">Critic's Corner📽️</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item text-black">
+            <a class="nav-link text-black font-weight-bold" href="/">Log Out</a>
+          </li>
+          <li class="nav-item text-black">
+            <a class="nav-link text-black font-weight-bold" href="/home">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2>Update Post</h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">Update Post</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-3 bg-grey">
+    <div class="container">
+      <p class="m-0 text-dark text-center ">Copyright &copy; 2023 Critic's Corner📽️ ~R.P.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
+
+
+
+
+
+
+

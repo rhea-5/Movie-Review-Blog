@@ -1,0 +1,33 @@
+{% block sidebar %}
+
+<style>
+  .card {
+    box-shadow: 0 16px 48px #6a6a6b;
+  }
+</style>
+
+<!-- Sidebar Widgets Column -->
+<div class="col-md-4 float-right ">
+  <div class="card my-4">
+    <h5 class="card-header">About</h5>
+    <div class="card-body">
+      <p class="card-text"> <ol type="1"><li> Leave Your Reviews: Watched a mind-blowing blockbuster or a hidden gem? Share your thoughts and rate the movies you've seen. Your reviews will help others discover the best films to watch.</li>
+
+        <li>Discover New Films: Explore our extensive database of movies, including the latest releases and timeless classics. Find recommendations based on your favorite genres and preferences.</li>
+        
+        <li>Engage with Fellow Film Lovers: Connect with like-minded movie aficionados from around the world. Read and comment on their reviews, engage in discussions, and build your own network of film-loving friends.</li>
+        
+        <li>Stay Updated: Stay in the loop with our latest articles, news, and in-depth analysis of the film industry. We're your go-to source for all things cinema.</li>
+        
+        <li>Create Lists: Build and share lists of your favorite movies, actors, directors, and more. Whether it's a top 10 of all-time classics or a list of must-watch thrillers, share it all, discover it all!</li>
+      </ol>
+        Critic's Corner is your passport to the world of film, where your opinions matter, and your passion for cinema is celebrated. So, grab your popcorn, start exploring, and let's embark on a cinematic journey together. Your reviews, your voice, your personal corner.</p>
+      
+      <a href="{% url 'create_post' %}" class="btn btn-danger">Create Post</a>
+      
+      <!-- <a href="https://docs.djangoproject.com/en/3.1/" class="btn btn-secondary">Django Docs</a> -->
+    </div>
+  </div>
+</div>
+
+{% endblock sidebar %}
